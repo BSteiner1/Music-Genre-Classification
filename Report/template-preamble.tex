@@ -1,0 +1,136 @@
+\usepackage[left=4cm,right=2.9cm,top=3cm,bottom=3cm]{geometry}
+\linespread{1.25}
+
+% Next we load some more packages. You might want to add to this list, but
+% do not remove or change things unless you know what you are doing.
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Page~\thepage} % Page number at the top right.
+\cfoot{} % No page number at the bottom.
+\usepackage{graphics}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{epsfig,epstopdf,color}
+\usepackage{enumitem}
+\usepackage[nottoc]{tocbibind}
+
+% Note that we set some options for algorithm2e here. If you want another
+% look to the result, change these.
+\usepackage[english,algoruled,lined]{algorithm2e}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+
+% \usepackage[notcite,notref]{showkeys}
+% Un-comment the line above this to see keys in the compiled output.
+
+% Here is the place to put any more packages you need.
+
+% The hyperref package is special: it has to be last.
+\usepackage[hidelinks,breaklinks]{hyperref}
+
+% Now we define a lot of commands and environments. The next five lines are
+% options for enumerate.
+\newcommand{\itm}[1]{\textrm{({#1})}} 
+\newcommand{\itmit}[1]{\itm{\textit{#1\,}}} 
+\newcommand{\rom}{\itmit{\roman{*}}} 
+\newcommand{\abc}{\itmit{\alph{*}}}
+\newcommand{\arab}{\itmit{\arabic{*}}} 
+
+% The next line sets the spacing between items in itemize and enumerate
+% lists.
+\setlist{itemsep=3pt,parsep=0pt,topsep=2pt,partopsep=0pt}  
+
+%The next 10 lines set up the claimproof environment.
+\newcommand{\oldqed}{}
+\newcommand{\eofClaim}{\hfill\scalebox{.6}{$\Box$}}
+\newenvironment{claimproof}[1][Proof]{
+  \renewcommand{\oldqed}{\qedsymbol}
+  \renewcommand{\qedsymbol}{\eofClaim}
+  \begin{proof}[#1]
+  }{
+  \end{proof}
+  \renewcommand{\qedsymbol}{\oldqed}
+}
+
+% The next lines allow explanations above <,>,=,\le,\ge 
+\newcommand{\By}[2]{\overset{\mbox{\tiny{#1}}}{#2}} 
+\newcommand{\ByRef}[2]{   \By{\eqref{#1}}{#2} } 
+\newcommand{\eqBy}[1]{    \By{#1}{=} } 
+\newcommand{\lBy}[1]{     \By{#1}{<} } 
+\newcommand{\gBy}[1]{     \By{#1}{>} } 
+\newcommand{\leBy}[1]{    \By{#1}{\le} } 
+\newcommand{\geBy}[1]{    \By{#1}{\ge} } 
+\newcommand{\eqByRef}[1]{ \ByRef{#1}{=} } 
+\newcommand{\lByRef}[1]{  \ByRef{#1}{<} } 
+\newcommand{\gByRef}[1]{  \ByRef{#1}{>} } 
+\newcommand{\leByRef}[1]{ \ByRef{#1}{\le} } 
+\newcommand{\geByRef}[1]{ \ByRef{#1}{\ge} }
+
+% The next two lines typeset \le and \ge nicely.
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant} 
+
+%Now we define some 'theorem like' environments.
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+% The next lines define the title and candidate number.
+\newcommand{\dissertationtitle}[1]{\newcommand*{\DissertationTitle}{#1}}
+
+\newcommand{\candnumber}[1]{\newcommand*{\CandNumber}{#1}}
+
+% The next bit sets up the title page.
+
+\newcommand{\dissertationtitlepage}{%
+  \pagenumbering{roman}
+  \thispagestyle{empty}
+  \vspace*{20mm}
+  \begin{center}
+    \Huge\textbf{\textsf{\DissertationTitle}}
+  \end{center}
+
+  \vspace{40mm}
+  \mbox{}
+
+  \vfill
+  \begin{center}
+    \Large\textsf{Candidate Number: \CandNumber}
+  \end{center}
+
+  \vspace{25mm}
+  \mbox{}
+
+  \vfill
+  \begin{center}
+    \Large\textbf{\textsf{A Dissertation submitted to the Department of
+        Mathematics\\
+        of the London School of Economics and Political Science}}
+  \end{center}
+
+  \vfill
+  \begin{center}
+    \Large\textsf{\today}
+  \end{center}}
+
+% Next the environment for the summary.
+
+\newenvironment{dissertationsummary}{%
+  \chapter*{Summary}
+  \addcontentsline{toc}{chapter}{Summary}
+  \lhead{Summary}}{%
+  \clearpage
+  \lhead{\nouppercase\leftmark}}
+
+% Table of contents.
+
+\newcommand{\dissertationtableofcontents}{%
+  \tableofcontents\clearpage\pagenumbering{arabic}}
+
+
+
