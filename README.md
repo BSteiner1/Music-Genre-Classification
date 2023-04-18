@@ -1,6 +1,8 @@
 # ST311-Group-Project
 
 ### An AI project with [@olly-mapps](https://github.com/olly-mapps) 
+[Final Report.pdf](https://github.com/BSteiner1/ST311-Group-Project/files/11262424/Final.Report.pdf)
+
 
 ## 🎯 Goal: to predict music genres based on audio files
 
@@ -20,3 +22,13 @@
 
 ##### Contrast this with a louder, busier rock song: 
 <img src="https://user-images.githubusercontent.com/96544001/229200331-f895003b-7980-45c8-b279-d70b5de7ff68.png" width="500" height="300">
+
+## Summary:
+
+#### Below are our final model architectures:
+
+<img src="https://user-images.githubusercontent.com/96544001/232796626-e6d853c6-f5a6-43ce-adcf-f95896cf3fc6.png" width="500" height="200">
+
+#### And our training results:
+
+<img src="https://user-images.githubusercontent.com/96544001/232797010-26af9c32-55bb-4ce1-8216-29dc9bacd5bb.png" width="500" height="200">
